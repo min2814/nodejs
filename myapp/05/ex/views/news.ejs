@@ -1,0 +1,30 @@
+<head>
+    <meta charset="UTF-8">
+    <title>
+        <%= title %>
+    </title>
+</head>
+
+<body>
+
+    <main>
+        <h2>최신 뉴스</h2>
+        <ul>
+            <% newsList.forEach(news=> { %>
+                <li>
+                    <h3>
+                        <%= news.title %>
+                    </h3>
+                    <p><em>
+                            <%= news.date %>
+                        </em></p>
+                    <p>
+                        <%= news.content %>
+                    </p>
+                </li>
+                <% }) %>
+        </ul>
+    </main>
+
+
+</body>

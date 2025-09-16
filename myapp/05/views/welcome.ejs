@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>EJS</title>
+</head>
+
+<body>
+    <h1>환영합니다, <%= name %>님! (<%=user%>)</h1>
+    <ul>
+        <% for(let i of items) { %>
+            <li>
+                <%=i%>
+            </li>
+            <% } %>
+    </ul>
+</body>
+
+</html>

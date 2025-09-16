@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>회원가입</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f3f3f3;
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .signup-box {
+            background: white;
+            padding: 2em;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 1em;
+        }
+
+        input {
+            width: 100%;
+            padding: 0.5em;
+            margin-bottom: 1em;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100%;
+            padding: 0.5em;
+            background: #2196F3;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .error {
+            color: red;
+            text-align: center;
+            margin-bottom: 1em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="signup-box">
+        <h2>회원가입</h2>
+        <% if (error) { %>
+            <div class="error">
+                <%= error %>
+            </div>
+            <% } %>
+                <form action="/signup" method="post" onsubmit="return validateForm()">
+                    <input type="text" name="username" placeholder="아이디" value="<%= values.username || '' %>" />
+                    <input type="password" name="password" placeholder="비밀번호" />
+                    <input type="password" name="confirm" placeholder="비밀번호 확인" />
+                    <button type="submit">가입하기</button>
+                </form>
+    </div>
+    <script>
+        function validateForm() {
+            const username = document.querySelector('input[name="username"]').value.trim();
+            const password = document.querySelector('input[name="password"]').value.trim();
+            const confirm = document.querySelector('input[name="confirm"]').value.trim();
+            // TODO: 프론트 유효성 검사 코드 작성
+            if (!username || !password || !confirm) {
+                alert('모든 항목을 입력하세요.');
+                return false;
+            }
+            if (username.length > 20 || password.length > 20 || confirm.length > 20) {
+                alert('입력값은 20자 이하만 가능합니다.');
+                return false;
+            }
+            if (password != confirm) {
+                alert('비밀번호가 일치하지 않습니다.');
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+
+</html>

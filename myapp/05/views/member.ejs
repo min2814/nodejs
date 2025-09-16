@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>국회의원 명단</title>
+</head>
+
+<body>
+    <h1>국회의원 명단</h1>
+    <table border="1">
+        <tr>
+            <td>대수</td>
+            <td>이름</td>
+            <td>성별</td>
+            <td>소속</td>
+            <td>지역구</td>
+        </tr>
+        <% members.forEach((v)=>{ %>
+            <tr>
+                <td>
+                    <%=v.sch_unit_cd%>
+                </td>
+                <td>
+                    <%=v.hg_nm%>
+                </td>
+                <td>
+                    <%=v.sex_gbn_nm%>
+                </td>
+                <td>
+                    <%=v.poly_nm%>
+                </td>
+                <td>
+                    <%=v.orig_nm%>
+                </td>
+            </tr>
+            <%})%>
+    </table>
+
+</body>
+
+</html>

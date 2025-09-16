@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>카페 음료 주문</title>
+</head>
+
+<body>
+    <h1>
+        <%= username %> 님의 주문 내역
+    </h1>
+    선택한 음료: <%= drink %> <br>
+
+        <% if(options && options.length> 0) { %>
+            추가 옵션:
+            <ul>
+                <% options.forEach(v=>{ %>
+                    <li>
+                        <%= v %>
+                    </li>
+                    <% }) %>
+            </ul>
+            <% } else { %>
+                <p>추가 옵션을 선택하지 않았습니다.</p>
+                <% } %>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>환영합니다</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .welcome-box {
+            background: #fff;
+            padding: 2em;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="welcome-box">
+        <h2>
+            <%= username %>님, 환영합니다!
+        </h2>
+        <p>로그인이 성공적으로 완료되었습니다.</p>
+    </div>
+</body>
+
+</html>

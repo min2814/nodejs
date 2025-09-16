@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>카페 음료 주문</title>
+</head>
+
+<body>
+    <h1>음료 주문서</h1>
+    <form action="/coffee/result" method="post">
+        <p>
+            이름: <input type="text" name="username" placeholder="이름을 입력하세요" />
+        </p>
+        <p>
+            음료 선택: <br />
+            <input type="radio" name="drink" value="아메리카노" /> 아메리카노<br />
+            <input type="radio" name="drink" value="카페라떼" /> 카페라떼<br />
+            <input type="radio" name="drink" value="바닐라라떼" /> 바닐라라떼<br />
+        </p>
+        <p>
+            추가 옵션 (복수 선택 가능): <br />
+            <input type="checkbox" name="options" value="샷 추가" /> 샷 추가<br />
+            <input type="checkbox" name="options" value="시럽 추가" /> 시럽 추가<br />
+            <input type="checkbox" name="options" value="휘핑크림" /> 휘핑크림<br />
+        </p>
+        <button type="submit">주문하기</button>
+    </form>
+</body>
+
+</html>

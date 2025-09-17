@@ -8,6 +8,12 @@ const app = express();
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
+// dirname => app-ejs.js 위치
+//             c:/nodejs/myapp/05   +   /public
+// path.resolve()  => node를 실행하는 위치  (myapp)
+
+app.use(express.static(path.join(import.meta.dirname, '../public')));
+
 app.get("/", (req, res) => {
     res.render("index", { name: "nodejs" });
 });
